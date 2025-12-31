@@ -2,6 +2,9 @@
 
 A JavaScript library for auto-flowing HTML content into printable, paginated pages with real-time editing support.
 
+## Example
+[https://codepen.io/bmooreinsaan/full/ZYOGgaJ]
+
 ## Features
 
 - **Automatic Pagination** - Content flows into fixed-size pages (default 8.5" x 11")
@@ -18,6 +21,12 @@ Download `printflow.js` and include it in your HTML:
 
 ```html
 <script src="printflow.js"></script>
+```
+
+Or Use the CDN
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/digitalisstudios/printflow/printflow.min.js></script>
 ```
 
 Or copy the contents into your project.
