@@ -313,6 +313,21 @@ class PrintFlow {
         const paddingX = this.PADDING_X / 96;
 
         return `
+            /* === PrintFlow Base Styles === */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Georgia, 'Times New Roman', serif;
+                background: #e0e0e0;
+                line-height: 1.6;
+                padding: 20px 0;
+            }
+
+            /* === Page Layout === */
             .page {
                 width: ${pageWidth}in;
                 height: ${pageHeight}in;
@@ -343,7 +358,114 @@ class PrintFlow {
                 margin-bottom: 1.5em;
             }
 
-            /* TOC Styles */
+            /* === Content Styles === */
+            h1 {
+                font-size: 24pt;
+                color: #1a1a1a;
+                margin-bottom: 0.5em;
+            }
+
+            h2 {
+                font-size: 18pt;
+                color: #1a1a1a;
+                margin-bottom: 0.5em;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 0.2em;
+            }
+
+            h3 {
+                font-size: 14pt;
+                color: #333;
+                margin-bottom: 0.4em;
+            }
+
+            h4 {
+                font-size: 12pt;
+                color: #444;
+                margin-bottom: 0.3em;
+            }
+
+            p {
+                margin-bottom: 1em;
+                text-align: justify;
+            }
+
+            ul, ol {
+                margin: 0 0 1em 1.5em;
+            }
+
+            li {
+                margin-bottom: 0.3em;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 1em;
+                font-size: 10pt;
+            }
+
+            th, td {
+                border: 1px solid #ccc;
+                padding: 8px 12px;
+                text-align: left;
+            }
+
+            th {
+                background: #f5f5f5;
+                font-weight: bold;
+            }
+
+            code {
+                background: #f0f0f0;
+                padding: 2px 6px;
+                border-radius: 3px;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9em;
+            }
+
+            pre {
+                background: #f5f5f5;
+                padding: 1em;
+                border-radius: 4px;
+                overflow-x: auto;
+                margin-bottom: 1em;
+                font-family: 'Courier New', monospace;
+                font-size: 0.9em;
+            }
+
+            blockquote {
+                border-left: 3px solid #666;
+                padding-left: 1em;
+                margin: 1em 0;
+                font-style: italic;
+                color: #555;
+            }
+
+            hr {
+                border: none;
+                border-top: 1px solid #ddd;
+                margin: 1.5em 0;
+            }
+
+            a {
+                color: #0066cc;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            strong, b {
+                font-weight: bold;
+            }
+
+            em, i {
+                font-style: italic;
+            }
+
+            /* === TOC Styles === */
             .toc-entry {
                 display: flex;
                 align-items: baseline;
@@ -383,10 +505,11 @@ class PrintFlow {
                 text-decoration: underline;
             }
 
-            /* Print styles */
+            /* === Print Styles === */
             @media print {
                 body {
                     background: white;
+                    padding: 0;
                 }
 
                 .page {
